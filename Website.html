@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <title>My First HTML Page</title>
+   <title>Utility Dashboard</title>
 </head>
 <body>
-   <h1>Welcome to HTML</h1>
-   <p>This is my first paragraph in HTML.</p>
+   <h1>Utility Dashboard</h1>
+   <p>Real-time utility monitoring and analytics.</p>
+   <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/3573951/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+    <pre id="csv-output"></pre>
+    <script>
+    fetch("data.csv")
+        .then(r => r.text())
+        .then(text => { document.getElementById("csv-output").textContent = text; });
+    </script>
 </body>
 </html>
